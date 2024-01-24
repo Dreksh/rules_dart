@@ -1,0 +1,9 @@
+module("io_bazel_rules_dart", "2.17.7")
+
+dart_repositories = use_extension("//:extensions.bzl", "repositories_extension")
+use_repo(
+    dart_repositories,
+    "dart_linux_x86_64",
+    "dart_darwin_arm64",
+    "dart_darwin_x86_64",
+)
