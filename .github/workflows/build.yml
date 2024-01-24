@@ -1,11 +1,16 @@
 name: Build
 
 on:
-  push:
+  # Run workflow on any pull request.
   pull_request:
 
+  # Run workflow on pushes to the master branch.
+  push:
+    branches: [master]
+
 jobs:
-  build:
+  run-tests:
+    timeout-minutes: 15
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
